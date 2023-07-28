@@ -12,7 +12,7 @@
 
 
 from __future__ import print_function, division, absolute_import
-from icho2023.seating import countries
+from icho2023.seating import countries, constants
 import numpy as np
 
 
@@ -125,14 +125,14 @@ class PES(object):
         energy = 0.0
         nrows, ncols = room.shape
         l0 = self.strip_ccode(room[irow, icol])
-        if l0 in {'', countries.empty}:
+        if l0 in {'', constants.empty}:
             # Empty seat, no penalty
             return 0.0
         rrange, crange = self.get_bounds(irow, icol, nrows, ncols)
         for jrow in range(nrows):
             for jcol in range(ncols):
                 l1 = self.strip_ccode(room[jrow, jcol])
-                if l1 in {'', countries.empty}:
+                if l1 in {'', constants.empty}:
                     # Empty seat, no penalty
                     continue
                 if irow == jrow and icol == jcol:
@@ -199,7 +199,7 @@ class PES(object):
             energy += self.sum_contributions(self.nnSR, sep)
 
         # Mutual intelligibility
-        if np.any([(l0 in lset and l1 in lset) for lset in countries.langsets]):
+        if np.any([(l0 in lset and l1 in lset) for lset in countries.langdict.values()]):
             energy += self.sum_contributions(self.langSR, sep)
 
         # Other
@@ -229,7 +229,7 @@ class PES(object):
             energy += self.b0
 
         # Mutual intelligibility
-        if np.any([(l0 in lset and l1 in lset) for lset in countries.langsets]):
+        if np.any([(l0 in lset and l1 in lset) for lset in countries.langdict.values()]):
             energy += self.langLR
 
         # Other
