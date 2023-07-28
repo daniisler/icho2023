@@ -1,91 +1,91 @@
-Country Name,Username,Participants
-Afghanistan,AFG,4
-Argentina,ARG,4
-Armenia,ARM,4
-Australia,AUS,4
-Austria,AUT,4
-Azerbaijan,AZE,4
-Bangladesh,BGD,4
-Belarus,BLR,4
-Belgium,BEL,4
-Brazil,BRA,4
-Bulgaria,BGR,4
-Canada,CAN,4
-China,CHN,4
-Chinese Taipei,TWN,4
-Costa Rica,CRI,4
-Croatia,HRV,4
-Cuba,CUB,2
-Cyprus,CYP,4
-Czech Republic,CZE,4
-Denmark,DNK,4
-Ecuador,ECU,4
-El Salvador,SLV,4
-Estonia,EST,4
-Finland,FIN,4
-France,FRA,4
-Georgia,GEO,4
-Germany,DEU,4
-Greece,GRC,4
-Hungary,HUN,4
-Iceland,ISL,4
-India,IND,4
-Indonesia,IDN,4
-Iran,IRN,4
-Ireland,IRL,4
-Israel,ISR,4
-Italy,ITA,4
-Japan,JPN,4
-Kazakhstan,KAZ,4
-Republic of Korea,KOR,4
-Kuwait,KWT,4
-Kyrgyzstan,KGZ,4
-Latvia,LVA,4
-Liechtenstein,LIE,1
-Lithuania,LTU,4
-Luxembourg,LUX,4
-Malaysia,MYS,4
-Mexico,MEX,4
-Moldova,MDA,4
-Mongolia,MNG,4
-Montenegro,MNE,4
-Nepal,NPL,4
-Netherlands,NLD,4
-New Zealand,NZL,4
-Nigeria,NGA,4
-North Macedonia,MKD,4
-Norway,NOR,4
-Oman,OMN,4
-Pakistan,PAK,4
-Paraguay,PRY,3
-Peru,PER,4
-Philippines,PHL,4
-Poland,POL,4
-Portugal,PRT,4
-Qatar,QAT,4
-Romania,ROU,4
-Russian Federation,RUS,4
-Saudi Arabia,SAU,4
-Serbia,SRB,4
-Singapore,SGP,4
-Slovakia,SVK,4
-Slovenia,SVN,4
-Sri Lanka,LKA,4
-South Africa,ZAF,4
-Spain,ESP,4
-Sweden,SWE,4
-Switzerland,CHE,4
-Syria,SYR,4
-Tajikistan,TJK,4
-Thailand,THA,4
-Trinidad and Tobago,TTO,4
-Turkey,TUR,4
-Turkmenistan,TKM,4
-Ukraine,UKR,4
-United Arab Emirates,ARE,4
-United Kingdom,GBR,4
-United States of America,USA,4
-Uruguay,URY,2
-Uzbekistan,UZB,4
-Venezuela,VEN,4
-Vietnam,VNM,4
+Country,Students,Language 1,Language 2,Language 3
+Afghanistan,4,Pashto,Dari,
+Argentina,4,Spanish,,
+Armenia,4,Armenian,Russian,
+Australia,4,English,,
+Austria,4,German,,
+Azerbaijan,4,Azeri,Turkish,Russian
+Bangladesh,4,Bengali,English,Arabic
+Belarus,4,Russian,,
+Belgium,4,Dutch,French,
+Brazil,4,Portuguese,,
+Bulgaria,4,Bulgarian,Turkish,
+Canada,4,English,French,
+China,4,Chinese,,
+Chinese Taipei,4,Chinese,,
+Costa Rica,4,Spanish,,
+Croatia,4,Serbocroatian,,
+Cuba,2,Spanish,,
+Cyprus,4,Greek,English,
+Czech Republic,4,Czech,,
+Denmark,4,Danish,,
+Ecuador,4,Spanish,,
+El Salvador,4,Spanish,,
+Estonia,4,Estonian,Russian,
+Finland,4,Finnish,Swedish,
+France,4,French,,
+Georgia,4,Georgian,Russian,Turkish
+Germany,4,German,,
+Greece,4,Greek,,
+Hungary,4,Hungarian,,
+Iceland,4,Icelandic,,
+India,4,Hindi,English,
+Indonesia,4,Malay,,
+Iran,4,Farsi,,
+Ireland,4,English,,
+Israel,4,Hebrew,Russian,
+Italy,4,Italian,,
+Japan,4,Japanese,,
+Kazakhstan,4,Russian,Kazakh,
+Kuwait,4,Arabic,Farsi,English
+Kyrgyzstan,4,Kyrgyz,Russian,Turkish
+Latvia,4,Latvian,Russian,
+Liechtenstein,1,German,,
+Lithuania,4,Lithuanian,,Russian
+Luxembourg,4,French,German,Luxembourgish 
+Malaysia,4,Malay,,
+Mexico,4,Spanish,,
+Moldova,4,Romanian,Russian,
+Mongolia,4,Mongolian,Russian,
+Montenegro,4,Serbocroatian,Montenegrin,
+Nepal,4,Nepali,Hindi,
+Netherlands,4,Dutch,,
+New Zealand,4,English,,
+Nigeria,4,English,,
+North Macedonia,4,Macedonian,Albanian,
+Norway,4,Norwegian,,
+Oman,4,Arabic,,
+Pakistan,4,Urdu,English,
+Paraguay,2,Spanish,Guarani,
+Peru,4,Spanish,,
+Philippines,4,Filipino,English,Malay
+Poland,4,Polish,,
+Portugal,4,Portuguese,,
+Qatar,4,Arabic,,
+Republic of Korea,4,Korean,,
+Romania,4,Romanian,,
+Russian Federation,4,Russian,,
+Saudi Arabia,4,Arabic,,
+Serbia,4,Serbocroatian,,
+Singapore,4,English,Chinese,Malay
+Slovakia,4,Slovak,Czech,
+Slovenia,4,Slovene,,
+South Africa,4,English,Afrikaans,
+Spain,4,Spanish,,
+Sri Lanka,4,Sinhala,Tamil,English
+Sweden,4,Swedish,,
+Switzerland,4,German,French,Italian
+Syria,4,Arabic,,
+Tajikistan,4,Farsi,Russian,
+Thailand,4,Thai,,
+Trinidad and Tobago,4,English,,
+Turkey,4,Turkish,,
+Turkmenistan,4,Turkmen,Turkish,Russian
+Ukraine,4,Ukraininan,Russian,
+United Arab Emirates ,4,Arabic,,
+United Kingdom,4,English,,
+United States of America,4,English,,
+Uruguay,3,Spanish,English,
+Uzbekistan,4,Uzbek,Russian,Turkish
+Venezuela,4,Spanish,,
+Vietnam,4,Vietnamese,,
