@@ -4,7 +4,11 @@
 
 ## Printing & Scanning
 
-## OlyExams Additions
+
+```
+pip3 install -r requirements.txt
+pip3 install zbarlight
+```
 
 ## Ranking & Statistics
 
@@ -115,6 +119,63 @@ Then repeat the process described in the sections above with all keeping the var
 ```
 python3 markings_statistics_arbitration.py
 ```
+
+## OlyExams Additions
+
+All scripts for this section are located in the folder `oly-exams_additions`. These scripts served to take off some tedious work in oly-exams. They are written in python3 and require the packages defined in requirements.txt. To install them, run
+
+```
+pip3 install -r requirements.txt
+```
+
+Some IT-knowledge is required to run them properly and they should only be run by someone feeling confident with them.
+
+### Preparation of secret.py
+
+The script `secret.py` contains the login information for the oly-exams web-service. It is not included in the repository for obvious reasons. It should be placed in the same folder as the other scripts and contain the information shown in the template `secret_template.py`.
+
+### Bulk download exam
+
+The script `bulk_download_exam.py` downloads all compiled pdf questions, answer-sheets and solutions (id's need to be specified in `secret.py`) from an exam from the oly-exams web-service and collates them into a single pdf document. For authentication you need to login to the web-service in your browser and copy the cookie information into `secret.py`. Further a fer variables need to be specified at the beginning of the script:
+
+```
+# Env
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+tmp_dir = os.path.join(PROJECT_DIR, 'exam_pdfs')
+os.makedirs(tmp_dir, exist_ok=True)
+os.makedirs(os.path.join(PROJECT_DIR, 'merged_exam'), exist_ok=True)
+debug=1
+
+download_latest_versions = True
+build_exam = True
+exam_type = 'Theory' # 'Practical' or 'Theory'
+max_version_general_inst = []
+general_inst_files = []
+if exam_type == 'Practical':
+    # For practical problems (question id, answer id, solution id, question number)
+    problem_id_array = [(6,9,7,1), #OC problem (P1)
+                        (11,14,12,2), #Titration tango (P2)
+                        (18,21,16,3) #Beauty in simplicity (P3)
+                        ] 
+    general_inst_id = [2,3]
+if exam_type == 'Theory':
+    # For theory problems
+    problem_id_array=[(4,8,5,1),(13,15,10,2),(17,20,19,3),(22,25,23,4), (26,28,27,5), (30,31,29,6), (33,34,32,7), (35,37,36,8), (39,40,38,9), (41,43,42,10)]
+    general_inst_id = [1]
+
+base_domain = 'icho2023.oly-exams.org'
+```
+
+### Color Points in Solutions
+
+This script was used to highlight the given points for a solution in blue color and use a consistent format. This is to show, that such bulk changes can also be done automatically. As the script will (hopefully) not be needed again, it's just here to show what can be done.
+
+### Insert questions into Answer Sheets
+
+This script was used to insert the questions into the answer sheets. It is not very general and was only used for the practical exam. It is just here to show what can be done.
+
+
+
 ## Mass Mailing
 
 These scripts are used to send out mass mails to all delegations. They serve as an idea base on what can be done, but for each application they need to be rewritten (at least partially). Also the script should first be tested by sending an email to your own email adress, to make sure you don't send out 300 faulty emails. The scripts are located in the folder `auto_mailing`.
