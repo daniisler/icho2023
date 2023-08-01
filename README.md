@@ -4,11 +4,41 @@
 
 ## Printing & Scanning
 
+Because some extra functionalities were needed for printing and scanning, some scripts were used to handle this. They are located in the folder `printing-scanning_scripts`. They are written in python3 and require the packages defined in requirements.txt. To install them, run
 
 ```
 pip3 install -r requirements.txt
 pip3 install zbarlight
 ```
+
+### Printing of Labstock Labels
+
+The script `labels_gen_pdf.py` is used to print the labels for the labstock. It takes a csv file as input, which contains the information on the student code and amount of chemical contained in the vial. These were used to mark the vials with the samples for the analytic tasks in the practical exam.
+
+### Reprinting Answer Sheets for Markers
+
+Our markers requested to mark the students answers on prinouts. This has been done by api queries to oly-exams and then getting the files via ftp. This is an advanced process and should only be done after extensive testing and understanding. The script should e monitored during the whole scanning process.
+
+For the process the script `as_reprint_api.py` was used. It queries the oly-exams api for successful scans; for this you need to add the api key in `secret.py`, which you can find [here](https://icho2023.oly-exams.org/exam/admin/api_keys) (if you don't have access you might need to ask the developers). Further the oly-exams ftp-folder needs to be mounted in your filesystem and you need to provide the path in one of the variables in the beginning.
+
+The script will then query the api every three minutes and check if there are new scans. If there are, it will download the corresponding answer sheets, collate them in pdfs per task with cover-sheets (the number of students per batch can be defined as a variable). It also features telegram notifications for unsuccessful scans, which can be enabled by providing the bot token and chat id in the beginning of the script. See [here](https://core.telegram.org/bots#6-botfather) for more information on how to create a telegram bot.
+
+### Reprinting Answer Sheets for Delegations
+
+Although we encouraged the delegations to mark their students answers electronically, many requested printouts. To provide these on time, we used a similar process as for the markers.
+
+The script `gen_delegations_answers_pdf.py` is used to reprint the answer sheets for the delegations. This works only if the script mentioned above is running/was running because it uses the files provided by that. It will collect the answer sheets of the students of each delegation mentioned in a csv file, collate them in a pdf with cover sheet and upload the result to google drive where printing volunteers can access them.
+
+Before running the script for the first time, you need to have created a google drive api key and downloaded the credentials file. See [here](https://developers.google.com/drive/api/v3/quickstart/python) for more information on how to do this. You need to provide the path to the credentials file in the beginning of the script. The script will then ask you to authenticate with your google account. This will create a token file, which will be used for future authentication. The script will also ask you to provide the path to the folder where the pdfs should be uploaded to. This folder needs to be shared with the service account created for the api key.
+
+### Final Version for TakeHome
+
+We offered the delegations a take-home package with their translations of the exam, the official english version and the solutions. As an addition we also scanned the marked answer sheets. The qr-codes were then evaluated again using the script `marked_exams_sorted.py`, which takes pdf files fresh from scanning as inputs and sorts them into folders for each delegation. All pages where no qr-code was detected are collated into another pdf, where one could manually search for missing pages. Note that pages can also go missing if the scanner pulls multiple pages at once and therefore this process is not 100% reliable.
+
+After this, the script `exam_final_integrate_polybox.py` was run to also integrate the electronically marked exams that were provided via a cloud called polybox.
+
+When everything was collected, the script `exam_final_version.py` was used to collate all the files into one pdf per student in a folder per delegation. Missing pages were replaced by the original scan (not marked). Note this was the first try of such a thing and we achieved to get about 99% of all pages. This was treated as good enough.
+
 
 ## Ranking & Statistics
 
