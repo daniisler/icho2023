@@ -1,4 +1,13 @@
-import os
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   ranking_orig_script.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Provides the markings with the names in their original script (needed for IChO long term storage).
+'''
+
 import pandas as pd
 
 official_ranking_df = pd.read_csv('/home/daniel/Downloads/marking_eval_Final_merged.csv')

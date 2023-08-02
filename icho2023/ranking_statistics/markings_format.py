@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   markings_format.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Gets the markings of a exam and reformats them by reading the maximum points from the header.
+'''
+
 import csv
 import random
 import os

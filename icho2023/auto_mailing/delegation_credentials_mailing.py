@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   delegation_credentials_mailing.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Sends out the credentials for each delegation to the mentors, observers and guests.
+'''
+
 import os
 from secret import smtp_username, smtp_password, smtp_host, smtp_port
 import smtplib

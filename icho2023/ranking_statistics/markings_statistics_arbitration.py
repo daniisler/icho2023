@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   markings_statistics_arbitration.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Gives us soem plots and statistics of how much has changed between the organizers and the final marking.
+'''
+
 import pandas as pd
 import os
 import matplotlib.pyplot as plt

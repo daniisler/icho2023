@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   marked_exams_sorter.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Sorts the scanned marked exams by qr code into a folder structure you should read from the code.
+'''
+
 import os
 from PyPDF2 import PdfWriter, PdfReader, PdfMerger
 import json

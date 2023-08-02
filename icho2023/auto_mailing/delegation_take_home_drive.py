@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   delegations_take_home_drive.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Creates a google drive folder for each delegation and uploads the take-home exam files.
+'''
+
 import os
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive

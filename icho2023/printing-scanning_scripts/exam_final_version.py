@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   exam_final_version.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Creates the take-home marked exams. This script should only be run once all marked exams have been provided, scanned and sorted. It will replace missing files with the original scans (not marked) and output how many pages were missing.
+'''
+
 # THIS SCRIPT SHOULD ONLY BE RUN ONCE ALL MARKED SHEETS HAVE BEEN PROVIDED, SCANNED AND SORTED
 import os
 from PyPDF2 import PdfMerger, PdfReader

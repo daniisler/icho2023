@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   ranking_sort.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Computes the medal cutoff values upon getting csv files with the total points of each student.
+'''
+
 import pandas as pd
 import numpy as np
 import os

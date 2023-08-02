@@ -1,4 +1,13 @@
-# Gets a list of the delegations that want printout of their students answer sheets and combines them into one pdf per delegation
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   gen_delegations_answers_pdf.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Gets a list of the delegations that want printout of their students answer sheets and combines them into one pdf per delegation
+'''
+
 import numpy as np
 import os
 from PyPDF2 import PdfMerger

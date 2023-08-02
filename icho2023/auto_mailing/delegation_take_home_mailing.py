@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   delegations_take_home_mailing.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Sends out the links to the shared google drive folders for the take-home marked exams.
+'''
+
 import os
 from secret import smtp_username, smtp_password, smtp_host, smtp_port
 import smtplib
@@ -10,7 +20,7 @@ import pandas as pd
 import zipfile
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
-from delegations_take_home_drive import create_folder, create_share_link, upload_files
+from icho2023.auto_mailing.delegation_take_home_drive import create_folder, create_share_link, upload_files
 
 
 # Authenticate with Google Drive using pydrive

@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   inserd_questions_in_as.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   This script was used only once to insert the question formulation into the boxes of the answer sheets.
+'''
+
 import requests
 import os
 import xml.etree.ElementTree as ET

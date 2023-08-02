@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   upload_google_drive.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   File upload to a shared google drive folder.
+'''
+
 from pydrive.drive import GoogleDrive
 from pydrive.auth import GoogleAuth
 from secret import practical_folder_id, theoretical_folder_id

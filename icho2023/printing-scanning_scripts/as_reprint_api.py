@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   as_reprint_api.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Queries the oly-exams api for successful scans, collates them into single pdfs per task and sends the result to the printing service.
+'''
+
 import requests
 import os
 from secret import telegram_token, telegram_chat_id, scan_api_key

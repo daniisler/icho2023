@@ -1,5 +1,15 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   exam_final_integrate_polybox.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Integrates the electronically marked exams into the take-home marked exams.
+'''
+
 import os
-from PyPDF2 import PdfReader, PdfWriter, PdfMerger
+from PyPDF2 import PdfReader, PdfWriter
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 question_no = 6

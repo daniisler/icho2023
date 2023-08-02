@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   markings_statistics_whole.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Gives somes statistics about the ranking, including medal distribution.
+'''
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np

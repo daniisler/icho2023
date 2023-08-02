@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   markings_statistics_theory.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Gives statistics about the markings of the theory exam.
+'''
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np

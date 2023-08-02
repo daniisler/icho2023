@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   labels_gen_pdf.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Generates a pdf ready for printing labels on a predefined format (A4, 4x10 labels).
+'''
+
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4, mm
 import os

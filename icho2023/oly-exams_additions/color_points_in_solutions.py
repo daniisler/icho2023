@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   color_points_in_solutions.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Exports the qml of the solutions and modifies it to make the awarded points consistent and clearly visible by coloring in blue. Before running this script, you need to be logged in to the oly-exams website using Firefox. You also need to have the necessary cookies and session id. See the template.secrets.py file for more details and specify the solutions_id_array in the secrets.py file.
+'''
+
 import requests
 import os
 from secret import csrftoken, sessionid, solutions_id_array

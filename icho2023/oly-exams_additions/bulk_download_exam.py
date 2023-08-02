@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   bulk_download_exam.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Logs into the oly-exams website and compiles and downloads all the exam question for a given exam type. Before you need to specify the quesions id's in the problem_id_array variable and give recent cookie parameters in the secret.py file.
+'''
+
 import requests
 import os
 import time

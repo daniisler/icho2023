@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*-coding:utf-8 -*-
+'''
+@File    :   cover_sheets.py
+@Time    :   2023/08/02
+@Author  :   Daniel Isler
+@Contact :   exams@icho2023.ch
+@Desc    :   Generates a cover-sheet that can be used to mark newly printed documents with a code shown through the envelope window.
+'''
+
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4, mm
 import os
