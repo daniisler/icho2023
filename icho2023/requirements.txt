@@ -1,0 +1,13 @@
+bs4
+contexttimer
+matplotlib
+numpy
+Pillow
+pandas
+PyPDF2
+pydrive
+pypdf
+regex
+reportlab
+seaborn
+temp
