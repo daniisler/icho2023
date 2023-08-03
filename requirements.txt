@@ -11,3 +11,4 @@ regex
 reportlab
 seaborn
 temp
+tqdm

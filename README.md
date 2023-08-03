@@ -1,17 +1,69 @@
 # Scripts used for IChO2023
 
-## Logistics & Allocations
+## Environment Setup
 
-This repo includes Country Borders data available from <https://www.geodatasource.com>.
-
-## Printing & Scanning
-
-Because some extra functionalities were needed for printing and scanning, some scripts were used to handle this. They are located in the folder `printing-scanning_scripts`. They are written in python3 and require the packages defined in requirements.txt. To install them, run
+Our scripts have been written in Python 3 and depend on several modules that need to be installed first by running 
 
 ```
 pip3 install -r requirements.txt
-pip3 install zbarlight
 ```
+
+or equivalent. To complete the setup, run
+
+```
+binlink.sh
+
+source env.sh
+```
+
+which creates links to some top-level executables in the `bin` directory and modifies the `$PATH` and `$PYTHONPATH`
+environment variables. You may want to add the contents of `env.sh` to your `.bashrc` file; otherwise, make
+sure you `source env.sh` every time you start a new terminal session to run our student allocation scripts.
+
+## Logistics & Allocations
+
+To generate seating plans for the practical and theoretical exams we use a simulated annealing algorithm that minimizes
+a penalty function. This function is defined in `icho2023/seating/interactions.py`, and a detailed explanation of
+how it works is given in the docstring. In order to perform the simulation, we need to tell the function how many
+students are attending the Olympiad and how different delegations "interact" - i.e., are there factors that 
+disfavour seating students from any two given delegations next to each other. As such, we've considered
+languages spoken by a delegation, geographical proximity, and "other" (geopolitical) factors. How these
+are documented is described in the next section.
+
+### Delegation Data
+
+The directory `data` contains the following data files that you shouldn't have to modify:
+
+  * `iso3166.csv`: list of country codes and the corresponding 2- and 3-letter codes from ISO 3166
+
+  * `borders.csv`: list of country land borders (data available from <https://www.geodatasource.com>).
+  
+...and the following files that you will likely have to change:
+
+  * `invitees.csv`: comma-separated file with columns 'Country', 'Students', 'Language 1', 'Language 2', 
+  and 'Language 3'. The 'Country' column should list a name that matches one of the entries in `iso3166.csv`.
+  The 'Students' column lists the number of students in the delegation. The 'Language' columns list the
+  languages spoken fluently by members of the delegation, as indicated upon registration. You may want
+  to redact 'English' so as not to overload the algorithm.
+
+  * `aliases.json`: some countries were barred from participating at IChO 2023 and had instead sent
+  individual participants; individual participants were assigned custom three-letter codes taken
+  from the reserved 'QMA' to 'QZZ' range, as defined in this file.
+
+  * `extra_borders.json`: only land borders are included in `borders.csv`; you may want to add
+  additional sea borders to be considered under the geographical proximity criterion.
+
+  * `other.json`: apart from proximity and spoken languages, other considerations might come into play;
+  our example is based on https://www.cfr.org/global-conlict-tracker/ as of May 2023. This is not an
+  expression of a political opinion and must not be treated as such.
+
+### Seating Allocation
+
+First, we have to generate a list of student codes. To do so, go to ``
+
+## Printing & Scanning
+
+Because some extra functionalities were needed for printing and scanning, some scripts were used to handle this. They are located in the folder `printing-scanning_scripts`.
 
 ### Printing of Labstock Labels
 

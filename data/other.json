@@ -1,0 +1,13 @@
+{
+    "Ukraine" : ["Russian Federation", "Belarus"],
+    "Syria"   : ["Turkey"],
+    "Israel"  : ["Iran", "Kuwait", "Oman", "Qatar", "Saudi Arabia", 
+                 "Syria", "United Arab Emirates", "Afghanistan", 
+                 "Bangladesh", "Indonesia", "Malaysia", "Pakistan"],
+    "United States of America" : ["Iran", "Afghanistan", "Cuba"],
+    "Saudi Arabia" : ["Iran"],
+    "Armenia" : ["Azerbaijan"],
+    "India"   : ["Pakistan"],
+    "China"   : ["Chinese Taipei"],
+    "Turkey"  : ["Greece", "Cyprus"]
+}

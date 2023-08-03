@@ -266,11 +266,14 @@ if __name__ == "__main__":
         stride = 1
     energy = [sim.energy]
 
-    for i in tqdm(range(args.n), desc="Progress of simulated annealing"):
+    pbar = tqdm(range(args.n), desc="Progress of simulated annealing")
+    pbar.set_postfix({'energy': energy[-1]})
+    for i in pbar:
         sim.beta = args.bi + (args.bf-args.bi)*i/args.n
         sim.step()
-        if i%stride == 0:
+        if (i+1)%stride == 0:
             energy.append(sim.energy)
+            pbar.set_postfix({'energy': energy[-1]})
 
     logging.info("Final energy = {:g}".format(sim.energy))
 
@@ -298,7 +301,7 @@ if __name__ == "__main__":
     ax.plot(np.arange(len(energy))*stride, energy)
     ax.set_xlabel('simulation step')
     ax.set_ylabel('penalty function')
-    ax.set_yscale('log')
+    ax.set_yscale('symlog', linthresh=3)
 
     fig.tight_layout()
     fig.savefig('annealed_energy.pdf')

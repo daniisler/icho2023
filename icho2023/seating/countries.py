@@ -14,6 +14,7 @@ from os import path
 from icho2023.seating.constants import datadir, aliases, empty
 import pandas as pd
 import numpy as np
+import json
 
 _nanvals = ['', 'NULL', 'NaN']
 # Dataset of invitees + languages
@@ -94,20 +95,10 @@ for land in invitedf.index:
 # Add non-interacting empty item
 nndict[empty] = set()
 # Add important sea borders
-add_relation(nndict, 'Denmark', 'Norway', 'Sweden')
-add_relation(nndict, 'Netherlands', 'Denmark', 'Norway', 'Sweden')
-add_relation(nndict, 'Mexico', 'Cuba')
-add_relation(nndict, 'Australia', 'New Zealand')
-add_relation(nndict, 'Indonesia', 'Malaysia')
-add_relation(nndict, 'Singapore', 'Indonesia', 'Malaysia')
-add_relation(nndict, 'Philippines', 'Indonesia', 'Malaysia', 'China')
-add_relation(nndict, 'Japan', 'Republic of Korea', 'China')
-add_relation(nndict, 'India', 'Sri Lanka')
-add_relation(nndict, 'Iran', 'Kuwait')
-add_relation(nndict, 'Cyprus', 'Turkey', 'Greece', 'Syria', 'Israel')
-add_relation(nndict, 'Afghanistan', 'India')
-add_relation(nndict, 'China', 'Nepal')
-add_relation(nndict, 'China', 'Chinese Taipei')
+with open(path.join(datadir,'extra_borders.json'), 'r') as f:
+    od = json.load(f)
+for key in od:
+    add_relation(nndict, key, *od[key])
 
 # Common language lists - make a dictionary of langauges,
 # and countries where they are commonly spoken. This 
@@ -138,16 +129,10 @@ for key in keys:
 # to change and can be modified however the organisers see fit.
 
 other = dict()
-add_relation(other, 'Ukraine', 'Russian Federation', 'Belarus')
-add_relation(other, 'Syria', 'Turkey')
-add_relation(other, 'Israel', 'Iran', 'Kuwait', 'Oman', 'Qatar', 'Saudi Arabia', 
-          'Syria', 'United Arab Emirates', 'Afghanistan', 'Bangladesh', 'Indonesia', 'Malaysia', 'Pakistan')
-add_relation(other, 'United States of America', 'Iran', 'Afghanistan', 'Cuba')
-add_relation(other, 'Saudi Arabia', 'Iran')
-add_relation(other, 'Armenia', 'Azerbaijan')
-add_relation(other, 'India', 'Pakistan')
-add_relation(other, 'China', 'Chinese Taipei')
-add_relation(other, 'Turkey', 'Greece', 'Cyprus')
+with open(path.join(datadir,'other.json'), 'r') as f:
+    od = json.load(f)
+for key in od:
+    add_relation(other, key, *od[key])
 
 if __name__ == "__main__":
 

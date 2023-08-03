@@ -1,0 +1,15 @@
+{ 
+ "Denmark"     : ["Norway", "Sweden"],
+ "Netherlands" : ["Denmark", "Norway", "Sweden"],
+ "Mexico"      : ["Cuba"],
+ "Australia"   : ["New Zealand"],
+ "Indonesia"   : ["Malaysia"],
+ "Singapore"   : ["Indonesia", "Malaysia"],
+ "Philippines" : ["Indonesia", "Malaysia", "China"],
+ "Japan"       : ["Republic of Korea", "China"],
+ "India"       : ["Sri Lanka"],
+ "Iran"        : ["Kuwait"],
+ "Cyprus"      : ["Turkey", "Greece", "Syria", "Israel"],
+ "Afghanistan" : ["India"],
+ "China"       : ["Nepal", "Chinese Taipei"]
+}
