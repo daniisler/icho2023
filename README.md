@@ -59,7 +59,25 @@ The directory `data` contains the following data files that you shouldn't have t
 
 ### Seating Allocation
 
-First, we have to generate a list of student codes. To do so, go to ``
+First, we have to generate a list of student codes. To do so, go to `examples/` and execute `./run.sh`.
+Next, you need the floorplans for the examination halls, stored as CSV files. Available seating is 
+indicated with `XXX-0`, and everything else is designated by an empty string. Floorplans used by
+IChO 2023 are stored in `data/theory_floorplans` and `data/practical_floorplans`.
+
+For examples using our `icholocator` program, go to `examples/theory_allocation/` or `examples/practical_allocation/`
+and execute `./run.sh`. The script should take about one minute to run and will produce CSV files with proposed
+student seating, PDFs showing changes of the penalty function over the course of the simulation (`annealed_energy.pdf`)
+and final inter-student interaction (`residuals.pdf`), as well as a pickle file `SIM.pkl` which can
+be used by advanced users to restart the simulation. Feel free to modify the penalties defined in
+`params.json` to see how that affects the final result and rate of convergence. NOTE: the length of the simulation
+(number of MC steps in `run.sh`) is set to a low value so that the example runs quickly. For a final allocation
+we recommend setting the number of steps to around 1'000'000, in which case the allocation may take a couple of
+hours, but will result in a lower energy configuration.
+
+### Post-processing and Logistics
+
+
+
 
 ## Printing & Scanning
 
