@@ -12,7 +12,6 @@ or equivalent. To complete the setup, run
 
 ```
 binlink.sh
-
 source env.sh
 ```
 
@@ -93,25 +92,15 @@ and execute the following sequence of commands:
 
 ```
 cd practical_allocation/
-
 python split_labs.py        # split the big labs into two
-
 # create a dataframe stored as a pickle file with each student code assigned a lab group
-
 python parse_practical.py seated_students.pkl   
-
 cd ../theory_allocation/
-
 python add_labels.py        # creates "marked" CSV seating plans with explicit row and column labels
-
 # update the dataframe from before with theory groups
-
 python parse_theory.py --data ../practical_allocation/seated_students.pkl seated_students.pkl
-
 cd ../
-
 # create a CSV listing group assignments in a more readable form
-
 python export_to_csv.py theory_allocation/seated_students.pkl seated_students.csv
 ```
 
