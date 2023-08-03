@@ -1,0 +1,10 @@
+{
+    "sameLR" : 20.0,
+    "sameSR" : [30.0, 20.0, 15.0, 10.0],
+    "neighbourLR" : 0.0,
+    "neighbourSR" : [5.0, 3.0],
+    "languageLR" : 0.0,
+    "languageSR" : [5.0, 3.0],
+    "otherLR" : 0.0,
+    "otherSR" : [20.0, 15.0, 10.0, 5.0]
+}

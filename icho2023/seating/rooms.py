@@ -25,7 +25,7 @@ class Hall(object):
         """
         Args:
             name (str): Room label
-            layout (str): CSV file with the room layout, wherein
+            layout (str): CSV file with the room layout, where
                 'XXX-0' indicates available seating and empty string
                 means unavailable.
         """
@@ -57,12 +57,12 @@ if __name__ == "__main__":
 
     from countries import datadir
     from os import path
-    layout_input = path.join(datadir, "HIL_061.csv")
-    hall0 = Hall("HIL F61", layout_input)
-    print(hall0.name, ',', hall0.capacity)
-    print(hall0.occupancy)
+    layout_input = path.join(datadir, 'theory_floorplans', 'HIL_061_half.csv')
+    hall0 = Hall("HIL F61 top", layout_input)
+    print(hall0.name+',', hall0.capacity)
+    print('Current hall occupancy:', hall0.occupancy) # should be 0
 
-    layout_input = path.join(datadir, "HIL_075.csv")
-    hall1 = Hall("HIL F75", layout_input)
-    print(hall1.name, ',', hall1.capacity)
-    print(hall1.occupancy)
+    layout_input = path.join(datadir, 'practical_floorplans', 'J_lab.csv')
+    hall1 = Hall("HCI J190", layout_input)
+    print(hall1.name+',', hall1.capacity)
+    print('Current lab occupancy:', hall1.occupancy) # should be 0

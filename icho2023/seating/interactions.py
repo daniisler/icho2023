@@ -41,10 +41,10 @@ class PES(object):
 
         self.sameLR = sameLR
         self.sameSR = sameSR
-        self.nnLR = neighbourLR
-        self.nnSR = neighbourSR
-        self.langLR = languageLR
-        self.langSR = languageSR
+        self.nnLR = self.neighbourLR = neighbourLR
+        self.nnSR = self.neighbourSR = neighbourSR
+        self.langLR = self.languageLR = languageLR
+        self.langSR = self.languageSR = languageSR
         self.otherLR = otherLR
         self.otherSR = otherSR
         # Maximal range for short-range interactions
@@ -226,7 +226,7 @@ class PES(object):
             
         # Neighbourhood
         if l1 in countries.nndict[l0]:
-            energy += self.b0
+            energy += self.nnLR
 
         # Mutual intelligibility
         if np.any([(l0 in lset and l1 in lset) for lset in countries.langdict.values()]):
