@@ -79,6 +79,7 @@ hours, but will result in a lower energy configuration.
 
 
 
+
 ## Printing & Scanning
 
 Because some extra functionalities were needed for printing and scanning, some scripts were used to handle this. They are located in the folder `printing-scanning_scripts`.

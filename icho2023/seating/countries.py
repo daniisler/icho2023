@@ -45,6 +45,10 @@ def code2two(code):
 def name2code(country):
     """Return the three-letter code for the requested country."""
     return iso3df.loc[country.lower().strip(), "Code"]
+
+def code2name(code):
+    """Return the English name of a country give the 3-letter code."""
+    return iso3df.index[iso3df["Code"] == code].to_list()[0]
     
 def add_relation(d, country, *args, coded=False):
     """The input dictionary `d` contains country codes as keys, e.g. 'CHE'.
@@ -122,11 +126,6 @@ keys = list(langdict)
 for key in keys:
     if len(langdict[key]) == 1:
         langdict.pop(key)
-
-# Other interactions, based on https://www.cfr.org/global-conflict-tracker/
-# as of May 2023. This is not an expression of a political opinion and must
-# not be treated as such. The relations documented here are most prone
-# to change and can be modified however the organisers see fit.
 
 other = dict()
 with open(path.join(datadir,'other.json'), 'r') as f:
