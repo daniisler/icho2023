@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{libertine}
+\usepackage[includehead,
+nomarginpar,% We don't want any margin paragraphs
+headheight=20mm,% Set \headheight to 10mm
+margin=2cm,
+top=1cm
+]{geometry}
+\usepackage{fancyhdr}
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\begin{document}
+	\pagestyle{fancy}
+	\fancyhf{} % clear existing header/footer entries
+	% We don't need to specify the O coordinate
+	\fancyhead[L]{\includegraphics[height=20mm]{logo.eps}}
+	\fancyhead[R]{\raisebox{1.5em}{\textbf{\large%
+			Purpose:}\hspace*{1em} \rule[0pt]{6.5cm}{1pt}}\\
+		\hfill \hspace*{1em} \rule[2ex]{6.5cm}{1pt}}
+	\fancyfoot[C]{page~\thepage~of \pageref{LastPage}}
+	\begin{center}
+		\input{@DUMMY@}
+	\end{center}
+\end{document}

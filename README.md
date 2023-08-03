@@ -57,9 +57,17 @@ The directory `data` contains the following data files that you shouldn't have t
   our example is based on https://www.cfr.org/global-conlict-tracker/ as of May 2023. This is not an
   expression of a political opinion and must not be treated as such.
 
-### Seating Allocation
+### Seating Allocation and Signing Sheets
 
 First, we have to generate a list of student codes. To do so, go to `examples/` and execute `./run.sh`.
+Once you have done that, you can also run
+
+```
+python make_signing_sheets.py students.csv
+```
+
+This will compile two signing sheets, ordered by delegation code and signing code, using XeTeX. 
+
 Next, you need the floorplans for the examination halls, stored as CSV files. Available seating is 
 indicated with `XXX-0`, and everything else is designated by an empty string. Floorplans used by
 IChO 2023 are stored in `data/theory_floorplans` and `data/practical_floorplans`.
@@ -76,9 +84,36 @@ hours, but will result in a lower energy configuration.
 
 ### Post-processing and Logistics
 
+It was convenient to split all students into 16 groups for each exam in order to set up and invigilate the
+exam venues. Most labs constituted a single group except for E376 and E394, which were split into halves.
+Group assignment for theory was more involved and can be deduced from the source code of the corresponding
+script. To assign students to their exam groups and to produce a human-readable CSV file documenting
+the assignment, go to the `examples` directory after running the examples from the previous section
+and execute the following sequence of commands:
 
+```
+cd practical_allocation/
 
+python split_labs.py        # split the big labs into two
 
+# create a dataframe stored as a pickle file with each student code assigned a lab group
+
+python parse_practical.py seated_students.pkl   
+
+cd ../theory_allocation/
+
+python add_labels.py        # creates "marked" CSV seating plans with explicit row and column labels
+
+# update the dataframe from before with theory groups
+
+python parse_theory.py --data ../practical_allocation/seated_students.pkl seated_students.pkl
+
+cd ../
+
+# create a CSV listing group assignments in a more readable form
+
+python export_to_csv.py theory_allocation/seated_students.pkl seated_students.csv
+```
 
 ## Printing & Scanning
 

@@ -1,3 +1,5 @@
 *.csv
 *.pdf
 *.pkl
+*.tex
+!sheet_template.tex

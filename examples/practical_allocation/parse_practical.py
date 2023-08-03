@@ -56,5 +56,4 @@ if args.data is not None:
 else:
     olddf = df
 olddf.to_pickle(args.out)
-print(olddf)
 
