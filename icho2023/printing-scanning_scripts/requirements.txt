@@ -1,0 +1,10 @@
+numpy
+pypdf
+Pillow
+contexttimer
+regex
+temp
+pandas
+PyPDF2
+bs4
+reportlab
