@@ -104,6 +104,13 @@ cd ../
 python export_to_csv.py theory_allocation/seated_students.pkl seated_students.csv
 ```
 
+Having constructed the database of seats, you can now produce documents that draw on this information, 
+such as instructions sheets for lab inspection. For this, go to `examples/lab_inspection/` and
+run `lab_covers.py template.tex ../practical_allocation/seated_students.pkl`. This will produce
+`lab_covers.pdf` with the three-letter delegation code positioned so that it is visible through the address window of a
+standard C4 envelope, as well as table listing the labs allocated to each student in that particular delegation. For
+more information, run `lab_covers.py -h` and feel free to examine `template.tex`.
+
 ## Printing & Scanning
 
 Because some extra functionalities were needed for printing and scanning, some scripts were used to handle this. They are located in the folder `printing-scanning_scripts`.
